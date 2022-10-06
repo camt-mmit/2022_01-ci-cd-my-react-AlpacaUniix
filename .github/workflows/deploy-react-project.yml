@@ -23,7 +23,7 @@ jobs:
           mkdir ./gh-pages
           git init -b main ./gh-pages
           git remote -t gh-pages origin\
-          https://git:${{github.actor}}@gitgub.com/${{ gitgub.repository }}.git
+          https://git:${{github.actor}}@gitgub.com/${{ github.repository }}.git
           git pull origin main
           rm -rf ./*
           cp -rf ../build/* ./
