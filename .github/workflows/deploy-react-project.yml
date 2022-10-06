@@ -24,10 +24,10 @@ jobs:
       - name: deploy-react-project
         run: |
           mkdir ./main
-          git init -b main ./main
+          git init -b gh-pages ./main
           cd ./main
-          git remote add -t main origin\
-          https://git:${{github.actor}}@gitgub.com/${{ github.repository }}.git
+          git remote add -t main origin \
+          https://git:${{github.token}}@github.com/${{ github.repository }}.git
           git pull origin main
           rm -rf ./*
           cp -rf ../build/* ./
