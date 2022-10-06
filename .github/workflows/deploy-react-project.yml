@@ -26,14 +26,14 @@ jobs:
           mkdir ./main
           git init -b gh-pages ./main
           cd ./main
-          git remote add -t main origin \
+          git remote add -t main origin1 \
           https://git:${{github.token}}@github.com/${{ github.repository }}.git
-          git pull origin main
+          git pull origin1 main
           rm -rf ./*
           cp -rf ../build/* ./
           git add .
           git commit -m "${{ github.actor }} deploy"
-          git push origin gh-pages
+          git push origin1 gh-pages
           cd ..
 
 
