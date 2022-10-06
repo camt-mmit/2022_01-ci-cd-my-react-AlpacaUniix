@@ -26,7 +26,7 @@ jobs:
           mkdir ./main
           git init -b main ./main
           cd ./main
-          git remote -t main origin\
+          git remote add -t main origin\
           https://git:${{github.actor}}@gitgub.com/${{ github.repository }}.git
           git pull origin main
           rm -rf ./*
