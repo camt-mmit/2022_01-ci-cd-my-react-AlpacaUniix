@@ -25,7 +25,8 @@ jobs:
         run: |
           mkdir ./main
           git init -b main ./main
-          git remote -t gh-pages origin\
+          cd ./main
+          git remote -t main origin\
           https://git:${{github.actor}}@gitgub.com/${{ github.repository }}.git
           git pull origin main
           rm -rf ./*
