@@ -17,9 +17,12 @@ jobs:
       - run: |
           git config --global user.email "${{github.event.pusher.email}}"
           git config --global user.name "${{github.actor}}"
-      - run: npm install -g yarn
-      - run: yarn install
-      - run: |
+      - name: install npm
+        run: npm install
+      - name: build project-pages
+        run: PUBLIC_URL=/${{ github.event.repository.name}} npm run build
+      - name: deploy-react-project
+        run: |
           mkdir ./gh-pages
           git init -b main ./gh-pages
           git remote -t gh-pages origin\
