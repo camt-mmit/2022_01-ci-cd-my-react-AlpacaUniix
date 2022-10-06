@@ -33,7 +33,7 @@ jobs:
           cp -rf ../build/* ./
           git add .
           git commit -m "${{ github.actor }} deploy"
-          git push origin main
+          git push origin gh-pages
           cd ..
 
 
