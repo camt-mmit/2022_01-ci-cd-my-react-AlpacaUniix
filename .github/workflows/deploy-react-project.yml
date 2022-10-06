@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is deploying project-pages
 on:
   push:
     branches:
-      - "master"
+      - "main"
 jobs:
   deploy-react-project:
     runs-on: ubuntu-latest
@@ -20,6 +20,8 @@ jobs:
       - run: npm install -g yarn
       - run: yarn install
       - run: |
+          mkdir ./gh-pages
+          git init -b main ./gh-pages
           git remote -t gh-pages origin\
           https://git:${{github.actor}}@gitgub.com/${{ gitgub.repository }}.git
           git pull origin main
