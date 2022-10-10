@@ -14,6 +14,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "16"
+      - name: setup git
       - run: |
           git config --global user.email "${{github.event.pusher.email}}"
           git config --global user.name "${{github.actor}}"
@@ -25,7 +26,7 @@ jobs:
         run: |
           mkdir ./main
           git init -b gh-pages ./main
-          cd ./main
+          cd ./gh-pages
           git remote add -t gh-pages origin1 \
           https://git:${{github.token}}@github.com/${{ github.repository }}.git
           git pull origin1 gh-pages
