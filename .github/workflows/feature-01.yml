@@ -28,7 +28,7 @@ jobs:
            git fetch --unshallow
            git checkout main
            git merge feature-01
-           git push origin main
+           git push origin1 main
 
 
   deploy-react-project:
@@ -52,7 +52,7 @@ jobs:
       - name: deploy-react-project
         run: |
           mkdir ./gh-pages
-          git init -b gh-pages ./main
+          git init -b gh-pages ./gh-pages
           cd ./gh-pages
           git remote add -t gh-pages origin1 \
           https://git:${{github.token}}@github.com/${{ github.repository }}.git
