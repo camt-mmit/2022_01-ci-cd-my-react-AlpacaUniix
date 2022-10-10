@@ -52,14 +52,14 @@ jobs:
       - name: deploy-react-project
         run: |
           mkdir ./main
-          git init -b gh-pages ./main
-          cd ./gh-pages
-          git remote add -t gh-pages origin1 \
+          git init -b feature-01 ./main
+          cd ./feature-01
+          git remote add -t feature-01 origin1 \
           https://git:${{github.token}}@github.com/${{ github.repository }}.git
-          git pull origin1 gh-pages
+          git pull origin1 feature-01
           rm -rf ./*
           cp -rf ../build/* ./
           git add .
           git commit -m "${{ github.actor }} deploy"
-          git push origin1 gh-pages
+          git push origin1 feature-01
           cd ..
