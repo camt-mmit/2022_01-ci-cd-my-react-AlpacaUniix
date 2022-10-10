@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Hello, UNIIX
+          Learn React UNIIX
         </a>
       </header>
     </div>
