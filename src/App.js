@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Hello, UNIIX;
+          Hello, UNIIX
         </a>
       </header>
     </div>
